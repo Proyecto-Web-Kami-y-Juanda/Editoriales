@@ -41,7 +41,6 @@ public class EditorialController
     @PutMapping("/editorial/{editorialId}")
     private Editorial update(@RequestBody Editorial editorial, @PathVariable("editorialId") int editorialId)
     {
-
         editorialService.saveOrUpdate(editorial);
         return editorial;
     }
