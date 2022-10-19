@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class EditorialController
 {
     @Autowired
@@ -23,6 +24,12 @@ public class EditorialController
     public List<Editorial> list()
     {
         return editorialService.listAll();
+    }
+
+    @GetMapping("/editorialName")
+    public String findById(@RequestParam("id")Integer id)
+    {
+        return editorialService.namebyId(id);
     }
 
     @DeleteMapping("/editorial/{editorialId}")
@@ -44,5 +51,6 @@ public class EditorialController
         editorialService.saveOrUpdate(editorial);
         return editorial;
     }
+
 
 }

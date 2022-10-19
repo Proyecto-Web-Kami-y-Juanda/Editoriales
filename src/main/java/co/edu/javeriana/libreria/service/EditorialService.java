@@ -5,6 +5,7 @@ import co.edu.javeriana.libreria.entity.Editorial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -28,6 +29,8 @@ public class EditorialService
         return repo.findById(id).get();
     }
 
+    public String namebyId(Integer id){ return repo.findNameById(id);}
+
     public void delete(Integer id) {
         repo.deleteById(id);
     }
@@ -36,5 +39,6 @@ public class EditorialService
     {
        repo.save(books);
     }
+
 
 }

@@ -28,6 +28,7 @@ public class LibreriaApplication
 					.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 					.authorizeRequests()
 					.antMatchers(HttpMethod.GET, "/login").permitAll()
+					.antMatchers(HttpMethod.GET, "/editorialName").permitAll()
 					.anyRequest().authenticated();
 		}
 	}
