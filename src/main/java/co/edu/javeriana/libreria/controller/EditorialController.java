@@ -29,6 +29,7 @@ public class EditorialController
     @GetMapping("/editorialName")
     public String findById(@RequestParam("id")Integer id)
     {
+        System.out.println("holis");
         return editorialService.namebyId(id);
     }
 
